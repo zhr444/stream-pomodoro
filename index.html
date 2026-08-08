@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="real-time-display" class="real-time-header">--:--:--</div>
+        
+        <h1 id="title-text">Pomodoro</h1>
+        <div class="cycles" id="cycles-display" title="Пройдено циклов">⚪ ⚪ ⚪ ⚪</div>
+        
+        <div id="mode" class="mode-label">Работа</div>
+        <div id="time" class="timer-display">25:00.00</div>
+        
+        <div class="progress-bg">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn">Старт</button>
+            <button id="pause-btn">Пауза</button>
+            <button id="reset-btn">Сброс</button>
+        </div>
+
+        <div class="tabs">
+            <button id="work-tab" class="active">Работа (25)</button>
+            <button id="break-tab">Отдых (5)</button>
+            <button id="long-break-tab">Перерыв (15)</button>
+        </div>
+
+        <button id="settings-toggle" class="settings-btn">Настройки</button>
+        
+        <div id="settings-panel" class="settings-panel hidden">
+            <div class="settings-row">
+                <label id="ms-label">Миллисекунды:</label>
+                <input type="checkbox" id="ms-toggle" checked>
+            </div>
+            
+            <div class="settings-row">
+                <label id="sound-label">Звук уведомлений:</label>
+                <input type="checkbox" id="sound-toggle" checked>
+            </div>
+            
+            <div class="settings-row custom-time-row">
+                <label id="custom-time-label">Время (ч:м):</label>
+                <div class="custom-inputs">
+                    <div class="input-col">
+                        <span id="lbl-work">Раб</span>
+                        <div class="hm-group">
+                            <input type="number" id="custom-work-h" min="0" max="24" value="0">
+                            <span>:</span>
+                            <input type="number" id="custom-work-m" min="0" max="59" value="25">
+                        </div>
+                    </div>
+                    <div class="input-col">
+                        <span id="lbl-break">Отд</span>
+                        <div class="hm-group">
+                            <input type="number" id="custom-break-h" min="0" max="24" value="0">
+                            <span>:</span>
+                            <input type="number" id="custom-break-m" min="0" max="59" value="5">
+                        </div>
+                    </div>
+                    <div class="input-col">
+                        <span id="lbl-long">Пер</span>
+                        <div class="hm-group">
+                            <input type="number" id="custom-long-h" min="0" max="24" value="0">
+                            <span>:</span>
+                            <input type="number" id="custom-long-m" min="0" max="59" value="15">
+                        </div>
+                    </div>
+                    <button id="apply-time-btn" class="apply-btn">OK</button>
+                </div>
+            </div>
+
+            <select id="lang-select" class="lang-select">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="zh">中文 (Chinese)</option>
+                <option value="uk">Українська</option>
+                <option value="be">Беларуская</option>
+                <option value="kk">Қазақша</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
